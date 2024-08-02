@@ -1,0 +1,18 @@
+﻿@model SpotiftDapper.Dtos.FilterSpotifyDto
+
+@{
+    Layout = "~/Views/Default/Layout.cshtml";
+}
+
+<form method="post">
+    <label>Sanatçı İsmi</label>
+    <input type="text" asp-for="artist_name" />
+    <label>Şarkı İsmi</label>
+    <input type="text" asp-for="track_name" />
+    <label>Çıkış Yılı</label>
+    <input type="text" asp-for="year" />
+    <label>Tür</label>
+    <input type="text" asp-for="genre" />
+    <button>Araaa</button>
+</form>
+

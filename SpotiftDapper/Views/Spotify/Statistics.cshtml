@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Statistics";
+    Layout = "~/Views/Default/Layout.cshtml";
+}
+
+<h1 class="mb-4">Statistics</h1>
+
+<div class="container">
+    <div class="row">
+        <!-- İlk Üç İstatistik -->
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-4">
+                <div class="card-header">Popularity Higher Than 30</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.PopularityHigherThan30</h5>
+                    <p class="card-text">This statistic shows the number of songs with popularity higher than 30.</p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="#" class="btn btn-light btn-sm">More Info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-4">
+                <div class="card-header">Rihanna Song Count</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.RihannaSongCount</h5>
+                    <p class="card-text">Number of songs by Rihanna in the database.</p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="#" class="btn btn-light btn-sm">More Info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-4">
+                <div class="card-header">Eminem Song Count</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.EminemSongCount</h5>
+                    <p class="card-text">Number of songs by Eminem in the database.</p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="#" class="btn btn-light btn-sm">More Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- İkinci Üç İstatistik -->
+        <div class="col-md-4">
+            <div class="card text-white bg-info mb-4">
+                <div class="card-header">Skillet Song Count</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.SkilletSongCount</h5>
+                    <p class="card-text">Number of songs by Skillet in the database.</p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="#" class="btn btn-light btn-sm">More Info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-warning mb-4">
+                <div class="card-header">Drake Song Count</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.DrakeSongCount</h5>
+                    <p class="card-text">Number of songs by Drake in the database.</p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="#" class="btn btn-light btn-sm">More Info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-dark mb-4">
+                <div class="card-header">Product Year 2015 Count</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.ProductYear2015Count</h5>
+                    <p class="card-text">Number of products from the year 2015.</p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="#" class="btn btn-light btn-sm">More Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Son İki İstatistik -->
+        <div class="col-md-6">
+            <div class="card text-white bg-secondary mb-4">
+                <div class="card-header">Pop Song Count</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.PopSongCount</h5>
+                    <p class="card-text">Number of pop songs in the database.</p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="#" class="btn btn-light btn-sm">More Info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-white bg-primary mb-4">
+                <div class="card-header">Dance Song Count</div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.DanceSongCount</h5>
+                    <p class="card-text">Number of dance songs in the database.</p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="#" class="btn btn-light btn-sm">More Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional: Add some CSS for additional styling -->
+<style>
+    .card {
+        border-radius: 0.5rem;
+    }
+
+    .card-header {
+        font-weight: bold;
+    }
+
+    .card-footer {
+        border-top: 1px solid #ddd;
+    }
+</style>
