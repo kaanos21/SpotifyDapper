@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using SpotiftDapper.Dtos;
 using SpotiftDapper.Services;
+using X.PagedList.Extensions;
 
 namespace SpotiftDapper.Controllers
 {
@@ -13,10 +15,12 @@ namespace SpotiftDapper.Controllers
             _spotifyservice = spotifyservice;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
             var values = await _spotifyservice.GetFirst50Song();
-            return View(values);
+            int pageSize = 10; // Sayfa başına öğe sayısı
+            var pagedItems = values.ToPagedList(page, pageSize);
+            return View(pagedItems);
         }
         [HttpGet]
         public IActionResult SearchSong() 
@@ -53,7 +57,12 @@ namespace SpotiftDapper.Controllers
             ViewBag.DanceSongCount= await _spotifyservice.DanceSongCountAsync();
             return View();
         }
-
+        public async Task<IActionResult> Tables()
+        {
+            ViewBag.Eminempopularity = await _spotifyservice.EminemAvgPopularity();
+            ViewBag.Skilletpopularity = await _spotifyservice.SkilletAvgPopularity();
+            return View();
+        }
 
     }
 }

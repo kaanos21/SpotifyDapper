@@ -14,5 +14,8 @@ namespace SpotiftDapper.Services
         Task<int> PopSongCountAsync();
         Task<int> DanceSongCountAsync();
         Task<int> PopularityHigherThan30Async();
+        Task<int> EminemAvgPopularity();
+        Task<int> SkilletAvgPopularity();
+        
     }
 }

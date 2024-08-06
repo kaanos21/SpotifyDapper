@@ -1,8 +1,9 @@
-﻿@model List<SpotiftDapper.Dtos.ResultSpotifyDto>
-
+﻿@using X.PagedList;
+@model IPagedList<SpotiftDapper.Dtos.ResultSpotifyDto>
 
 @{
     Layout = "~/Views/Default/Layout.cshtml";
+    int count = 0;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -16,10 +17,6 @@
     <div class="container mt-5">
         <h2 class="mb-4">Özellik Listesi</h2>
 
-        @* @Html.Partial("SearchSong.cshtml") *@
-
-
-
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -31,18 +28,42 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(var item in Model)
+                @foreach (var item in Model)
                 {
-                  <tr>
-                    <td>@item.column1</td>
-                    <td>@item.artist_name</td>
-                    <td>@item.track_name</td>
-                    <td>@item.year</td>
-                    <td>@item.genre</td>
-                </tr>  
+                    count = count + 1;
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.artist_name</td>
+                        <td>@item.track_name</td>
+                        <td>@item.year</td>
+                        <td>@item.genre</td>
+                    </tr>
                 }
             </tbody>
         </table>
+
+        <div class="pagination">
+            <ul class="pagination">
+                @if (Model.HasPreviousPage)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber - 1 })">Önceki</a>
+                    </li>
+                }
+                @for (int i = 1; i <= Model.PageCount; i++)
+                {
+                    <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                    </li>
+                }
+                @if (Model.HasNextPage)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber + 1 })">Sonraki</a>
+                    </li>
+                }
+            </ul>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -50,6 +71,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-

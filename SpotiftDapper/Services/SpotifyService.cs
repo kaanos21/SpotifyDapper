@@ -30,6 +30,14 @@ namespace SpotiftDapper.Services
             return count;
         }
 
+        public async Task<int> EminemAvgPopularity()
+        {
+            string query = "select avg(popularity) from spotify_data where artist_name='Eminem'";
+            var connection = _context.CreateConnection();
+            var count = await connection.QuerySingleAsync<int>(query);
+            return count;
+        }
+
         public async Task<int> EminemSongCountAsync()
         {
             string query = "Select count(*) from spotify_data where artist_name='Eminem'";
@@ -92,6 +100,14 @@ namespace SpotiftDapper.Services
         public async Task<int> RihannaSongCountAsync()
         {
             string query = "Select count(*) from spotify_data where artist_name='Rihanna'";
+            var connection = _context.CreateConnection();
+            var count = await connection.QuerySingleAsync<int>(query);
+            return count;
+        }
+
+        public async Task<int> SkilletAvgPopularity()
+        {
+            string query = "select avg(popularity) from spotify_data where artist_name='Skillet'";
             var connection = _context.CreateConnection();
             var count = await connection.QuerySingleAsync<int>(query);
             return count;

@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Tables";
+    Layout = "~/Views/Default/Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Hızlı Bakış Tablosu 1 -->
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Eminemin ortalama şarı popülerliği</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width:@(ViewBag.Eminempopularity)%"
+                             aria-valuenow="@ViewBag.Eminempopularity" aria-valuemin="0" aria-valuemax="100">
+                            @ViewBag.Eminempopularity
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hızlı Bakış Tablosu 2 -->
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Skilletin ortalama şarkı popülerliği</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width:@(ViewBag.Skilletpopularity)%"
+                             aria-valuenow="@ViewBag.Skilletpopularity" aria-valuemin="0" aria-valuemax="100">
+                            @ViewBag.Skilletpopularity
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add custom CSS for progress bar -->
+<style>
+    .progress {
+        height: 40px;
+        margin: 20px 0;
+    }
+    .progress-bar {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        font-size: 1.25rem;
+    }
+</style>
