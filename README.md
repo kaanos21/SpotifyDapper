@@ -37,3 +37,4 @@ SpotifyDapper, ASP.NET Core 6.0 kullanılarak geliştirilmiş bir uygulamadır. 
 ## SOLID Prensipleri
 
 Projede SOLID prensiplerine uygun olarak geliştirme yapılmıştır.
+
